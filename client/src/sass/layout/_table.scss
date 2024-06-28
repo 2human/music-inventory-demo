@@ -1,0 +1,145 @@
+.table {
+  font-size: 1.1rem;
+  white-space: pre-line;
+  width: 100%;
+  min-width: 150rem;
+  border-collapse: collapse;
+  border-top: 0.1px solid black;
+  word-break: break-word;
+  border-bottom: 0.5px solid rgb(219, 219, 219);
+
+  &--sources {
+    min-width: 181.35rem;
+  }
+
+  &--single-view {
+    min-width: 0;
+    width: 100%;
+    border-top: 1px solid #dbdbdb;
+  }
+
+  &__header {
+    text-align: left;
+    border-bottom: 0.1px solid black;
+    height: 2em;
+  }
+
+  &__data {
+    position: relative;
+    vertical-align: top;
+    padding: 0.25em;
+    border-left: 1px solid rgb(219, 219, 219);
+    &:nth-child(1) {
+      border-left: none;
+    }
+  }
+
+  &__row:nth-child(even) {
+    background-color: #ebebeb; //make every other row white
+  }
+
+  &__entry-cell--is-secular {
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  //Entry columns
+
+  &__entries-column--expand {
+    width: 1.5%;
+  }
+  &__entries-column--collection {
+    width: 10%;
+  }
+  &__entries-column--source-number {
+    width: 4%;
+  }
+  &__entries-column--location {
+    width: 8%;
+  }
+  &entries-column--title {
+    width: 8%;
+  }
+  &__entries-column--composer {
+    width: 8%;
+  }
+  &__entries-column--vocal-part {
+    width: 9%;
+  }
+  &__entries-column--key {
+    width: 6%;
+  }
+  &__entries-column--melodic-incipit {
+    width: 14.75%;
+  }
+  &__entries-column--text-incipit {
+    width: 14.75%;
+  }
+  &__entries-column--is-secular {
+    width: 5%;
+  }
+  &__entries-column--notes {
+    width: 11%;
+  }
+
+  //Source Columns
+
+  &__sources-column--expand {
+    //23.8p
+    width: 2.6rem;
+  }
+  &__sources-column--collection {
+    //121.5
+    width: 14rem;
+  }
+  &__sources-column--source-number {
+    //54
+    width: 4.4rem;
+  }
+  &__sources-column--call-number {
+    //115
+    width: 13.1rem;
+  }
+  &__sources-column--author {
+    //115
+    width: 12.25rem;
+  }
+  &__sources-column--title {
+    //121.5
+    width: 14rem;
+  }
+  &__sources-column--inscriptions {
+    //398
+    width: 45.5rem;
+  }
+  &__sources-column--description {
+    //405
+    width: 45.5rem;
+  }
+  &__sources-column--ms-entries {
+    width: 30rem;
+  }
+
+  //Collection Columns
+
+  &__collections-column--expand {
+    width: 1.5%;
+  }
+  &__collections-column--collection {
+    width: 10%;
+  }
+  &__collections-column--description {
+    width: 88.5%;
+  }
+
+  //Single-View Columns
+
+  &__single-view-column--label {
+    width: 12%;
+    min-width: 7rem;
+  }
+
+  &__single-view-column--data {
+    width: 88%;
+  }
+}

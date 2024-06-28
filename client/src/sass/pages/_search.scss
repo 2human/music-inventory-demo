@@ -1,0 +1,40 @@
+.section-navigation {
+  margin: 2rem 0 0;
+}
+
+.section-search-form {
+  margin: 2rem 0 1.5rem;
+}
+
+.section-search-results {
+  position: relative;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  background-color: #f8f8f8;
+  border-radius: 1rem;
+  box-shadow: 0 0.75rem 2rem rgba($color-black, 0.2); //add mix-in?
+}
+
+.page-buttons-bottom {
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.search {
+  &__intro-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__intro-content {
+    display: flex;
+    flex-direction: column;
+    width: 75rem;
+    margin-top: 2rem;
+    padding: 0 1rem;
+
+    @include respond(phone-land) {
+      width: 95vw;
+    }
+  }
+}

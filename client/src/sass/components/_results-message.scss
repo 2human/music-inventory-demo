@@ -1,0 +1,11 @@
+.results-message {
+  font-weight: 700;
+
+  &--no-results {
+    margin-left: 2rem;
+  }
+
+  @include respond(phone-port) {
+    font-size: 1.1rem;
+  }
+}

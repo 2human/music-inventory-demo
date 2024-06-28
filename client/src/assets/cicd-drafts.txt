@@ -1,0 +1,215 @@
+# This workflow will build a Java project with Maven, and cache/restore any dependencies to improve the workflow execution time
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-java-with-maven
+
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+
+name: Java CI with Maven
+
+on:
+  push:
+    branches: ['master']
+
+jobs:
+  build:
+    runs-on: self-hosted
+
+    strategy:
+      matrix:
+        node-version: [19.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up JDK 11
+        uses: actions/setup-java@v3
+        with:
+          java-version: '11'
+          distribution: 'temurin'
+          cache: maven
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+          cache-dependency-path: ./client/package-log.json
+      - name: Set Up Swap File for Additional Memory
+        run: free -m && sudo fallocate -l 4G /swapfile && sudo chmod 0600 /swapfile && sudo mkswap /swapfile && sudo swapon /swapfile
+      - name: Build Client
+        run: cd /home/ubuntu/actions-runner/_work/music-inventory-web-react/music-inventory-web-react/client && npm install
+
+      - name: Move Client Files to API
+        run: pwd && cd client && npm run deploy-build && pwd
+      - name: Build with Maven
+        run: cd .. && mvn -B package --file api/pom.xml
+      - name: Execute Jar File
+        run: sudo kill -9 `sudo lsof -t -i:80` & sudo java -jar /api/target/music-entries-web.jar
+      - name: Remove Swap File
+        run: cd / && sudo swapoff swapfile && sudo rm swapfile
+
+
+        name: Java CI with Maven
+
+on:
+  push:
+    branches: ["master"]
+
+jobs:
+  build:
+    runs-on: self-hosted
+
+    strategy:
+      matrix:
+        node-version: [19.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up JDK 11
+        uses: actions/setup-java@v3
+        with:
+          java-version: "11"
+          distribution: "temurin"
+          cache: maven
+      - name: Set Up Swap File for Additional Memory
+        run: free -m && sudo fallocate -l 4G /swapfile && sudo chmod 0600 /swapfile && sudo mkswap /swapfile && sudo swapon /swapfile
+      - name: Build Client
+        run: cd /home/ubuntu/actions-runner/_work/music-inventory-web-react/music-inventory-web-react/client && npm install
+      - name: Move Client Files to API
+        run: pwd && cd client && CI=false && npm run deploy-build && pwd
+      - name: Build with Maven
+        run: mvn -B package --file api/pom.xml
+      - name: Execute Jar File
+        run: sudo kill -9 `sudo lsof -t -i:80` & sudo java -jar /api/target/music-entries-web.jar
+
+
+
+##############3
+
+
+
+# This workflow will build a Java project with Maven, and cache/restore any dependencies to improve the workflow execution time
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-java-with-maven
+
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+
+
+
+
+name: Java CI with Maven
+
+on:
+  push:
+    branches: ["master"]
+
+jobs:
+  build:
+    runs-on: self-hosted
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up JDK 11
+        uses: actions/setup-java@v3
+        with:
+          java-version: "11"
+          distribution: "temurin"
+          cache: maven
+      - name: Set Up Swap File for Additional Memory
+        run: free -m && sudo fallocate -l 4G /swapfile && sudo chmod 0600 /swapfile && sudo mkswap /swapfile && sudo swapon /swapfile
+      - name: Build Client
+        run: cd /home/ubuntu/actions-runner/_work/music-inventory-web-react/music-inventory-web-react/client && npm install
+      - name: Move Client Files to API
+        run: pwd && cd client && CI=false && npm run deploy-build && pwd
+      - name: Build with Maven
+        run: mvn -B package --file api/pom.xml
+      - name: Execute Jar File
+        run: pwd && sudo kill -9 `sudo lsof -t -i:80` && sudo java -jar /api/target/music-entries-web-0.0.1-SNAPSHOT.jar
+      - name: Remove Swap File
+        run: cd / && sudo swapoff swapfile && sudo rm swapfile
+
+
+
+#######################
+
+
+# This workflow will build a Java project with Maven, and cache/restore any dependencies to improve the workflow execution time
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-java-with-maven
+
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+
+name: Java CI with Maven
+
+on:
+  push:
+    branches: ["master"]
+
+jobs:
+  build:
+    runs-on: self-hosted
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up JDK 11
+        uses: actions/setup-java@v3
+        with:
+          java-version: "11"
+          distribution: "temurin"
+          cache: maven
+      - name: Set Up Swap File for Additional Memory
+        run: free -m && sudo fallocate -l 4G /swapfile && sudo chmod 0600 /swapfile && sudo mkswap /swapfile && sudo swapon /swapfile
+      - name: Build Client
+        run: cd /home/ubuntu/actions-runner/_work/music-inventory-web-react/music-inventory-web-react/client && npm install
+      - name: Move Client Files to API
+        run: pwd && cd client && CI=false && npm run deploy-build && pwd
+      - name: Build with Maven
+        run: mvn -B package --file api/pom.xml
+      - name: Remove Swap File
+        if: always()
+        run: cd / && sudo swapoff swapfile && sudo rm swapfile
+      - name: Execute Jar File
+        run: sudo kill -9 `sudo lsof -t -i:80` & sudo java -jar /home/ubuntu/actions-runner/_work/music-inventory-web-react/music-inventory-web-react/api/target/music-entries-web.jar
+
+
+-------------------
+# This workflow will build a Java project with Maven, and cache/restore any dependencies to improve the workflow execution time
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-java-with-maven
+
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+
+name: Java CI with Maven
+
+on:
+  push:
+    branches: ["master"]
+
+jobs:
+  build:
+    runs-on: self-hosted
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up JDK 11
+        uses: actions/setup-java@v3
+        with:
+          java-version: "11"
+          distribution: "temurin"
+          cache: maven
+      - name: Build Client
+        run: cd /home/ubuntu/actions-runner/music-inventory-web-react/music-inventory-web-react/music-inventory-web-react/client && npm install
+      - name: Move Client Files to API
+        run: pwd && cd /home/ubuntu/actions-runner/music-inventory-web-react/music-inventory-web-react/music-inventory-web-react/client && CI=false && npm run deploy-build && pwd
+      - name: Build with Maven
+        run: cd /home/ubuntu/actions-runner/music-inventory-web-react/music-inventory-web-react/music-inventory-web-react && mvn -B package --file api/pom.xml
+      - name: Execute Jar File
+        run: sudo kill -9 `sudo lsof -t -i:80` & sudo java -jar /home/ubuntu/actions-runner/music-inventory-web-react/music-inventory-web-react/music-inventory-web-react/api/target/music-entries-web.jar &

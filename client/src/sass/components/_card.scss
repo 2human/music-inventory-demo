@@ -1,0 +1,49 @@
+.card {
+  font-family: Optima, -apple-system, BlinkMacSystemFont,
+    'Helvetica Neue', 'Segoe UI', Roboto, Arial, sans-serif;
+  font-size: 1.3rem;
+  line-height: 1.68rem;
+
+  &__container {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__content {
+    border: 1px solid #ddd;
+    border-radius: 0.4rem;
+    width: fit-content;
+
+    &--borderless {
+      border: none;
+    }
+  }
+
+  &__image {
+    max-width: 100%;
+  }
+
+  &__caption {
+    padding: 0.5rem;
+  }
+
+  &--float-left {
+    float: left;
+    margin-right: 2rem;
+
+    @include respond(phone-land) {
+      float: none;
+      margin-right: 0;
+    }
+  }
+
+  &--float-right {
+    float: right;
+    margin-left: 2rem;
+
+    @include respond(phone-land) {
+      float: none;
+      margin-left: 0;
+    }
+  }
+}

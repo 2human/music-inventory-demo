@@ -1,0 +1,23 @@
+.search-guide {
+  background-color: #f8f8f8;
+  max-height: 75vh;
+  margin: 0 auto;
+  width: 86rem;
+  border-radius: 0;
+  overflow-y: auto;
+
+  @include respond(tab-port) {
+    width: 70rem;
+    // margin: 5% auto;
+  }
+
+  @include respond(phone-land) {
+    width: 95%;
+    // margin: 7% auto;
+  }
+
+  @include respond(phone-port) {
+    width: 95%;
+    // margin: 10% auto;
+  }
+}

@@ -1,0 +1,32 @@
+.list {
+  &__ordered-list {
+    font-family: Optima, Georgia, serif;
+    font-weight: 400;
+    font-size: 1.8rem;
+    line-height: 2.88rem;
+    list-style-position: outside;
+
+    &--text-small {
+      font-size: 1.6rem;
+      line-height: 2.2rem;
+      margin-bottom: 0.3rem;
+    }
+  }
+
+  &__unordered-list {
+    font-family: Optima, Georgia, serif;
+    font-weight: 400;
+    font-size: 1.8rem;
+    line-height: 2.88rem;
+    list-style-position: outside;
+
+    &--text-small {
+      font-size: 1.6rem;
+      line-height: 2.2rem;
+      margin-bottom: 0.3rem;
+    }
+  }
+
+  &__item {
+  }
+}

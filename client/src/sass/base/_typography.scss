@@ -1,0 +1,37 @@
+@font-face {
+  font-family: Optima;
+  src: url('../src/assets/fonts/optima-std-roman.woff2');
+}
+
+@font-face {
+  font-family: Optima;
+  font-style: italic;
+  src: url('../src/assets/fonts/optima-std-italic.woff2');
+}
+
+@font-face {
+  font-family: Optima;
+  font-style: italic;
+  font-weight: bold;
+  src: url('../src/assets/fonts/optima-std-bolditalic.woff2');
+}
+
+// @font-face {
+// font-family: 'Optima Medium';
+// font-style: normal;
+// font-weight: normal;
+// src: local('Optima Medium'), url('Optima Medium.woff') format('woff');
+// }
+
+@font-face {
+  font-family: Optima;
+  font-weight: bold;
+  font-weight: 700;
+  src: url('../src/assets/fonts/optima-std-bold.woff2');
+}
+
+body {
+  font-family: Arial, Helvetica, Verdana, 'Bitstream Vera Sans',
+    SunSans-Regular, sans-serif;
+  font-size: 1.2rem;
+}

@@ -1,0 +1,65 @@
+.about {
+  &__connection-card {
+    // display: inline-block;
+    width: 30rem;
+
+    @include respond(phone-land) {
+      width: 50rem;
+    }
+  }
+
+  &__crucifixion-card,
+  &__pennsylvania-card {
+    // display: inline-block;
+    // width: 50rem;
+    width: 95%;
+    margin-bottom: 1rem;
+  }
+
+  &__read-card {
+    // display: inline-block;
+    width: 20rem;
+
+    @include respond(phone-land) {
+      width: 30rem;
+    }
+  }
+
+  &__salisbury-card {
+    // display: inline-block;
+    width: 45rem;
+    margin-bottom: 1rem;
+
+    @include respond(phone-land) {
+      width: 30rem;
+    }
+  }
+
+  &__stone-card {
+    // display: inline-block;
+    width: 20rem;
+
+    @include respond(phone-land) {
+      width: 30rem;
+    }
+  }
+
+  &__montague-card {
+    // display: inline-block;
+    width: 20rem;
+
+    @include respond(phone-land) {
+      width: 30rem;
+    }
+  }
+
+  &__watts-card {
+    width: 30rem;
+    margin-bottom: 1rem;
+  }
+
+  &__gravestone-card {
+    width: 60rem;
+    margin-bottom: 1rem;
+  }
+}

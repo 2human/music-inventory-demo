@@ -1,0 +1,28 @@
+.book-preview {
+  background-color: #f8f8f8;
+  max-height: 90vh;
+  margin: 0 auto;
+  padding: 2rem 3.5rem;
+  width: 86rem;
+  border-radius: 0;
+  overflow-y: auto;
+
+  @include respond(tab-port) {
+    width: 70rem;
+    // margin: 5% auto;
+  }
+
+  @include respond(phone-land) {
+    width: 95%;
+    // margin: 7% auto;
+  }
+
+  @include respond(phone-port) {
+    width: 95%;
+    // margin: 10% auto;
+  }
+
+  &__book-image {
+    width: 75%;
+  }
+}

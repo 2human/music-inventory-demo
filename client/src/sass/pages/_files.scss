@@ -1,0 +1,10 @@
+.files {
+  &__cards {
+    display: grid;
+    grid-template-rows: repeat(3, min-content);
+    grid-template-columns: repeat(auto-fill, 22rem);
+    gap: 2.25rem;
+    align-items: start;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,13 @@
+.page-content {
+  background-color: rgb(255, 255, 255);
+  margin: 1rem 0 1rem;
+  width: 75rem;
+  min-height: 50vh;
+  height: fit-content;
+  border: 1px solid rgb(221, 221, 221);
+  padding: 2rem;
+
+  @include respond(phone-land) {
+    width: 95vw;
+  }
+}

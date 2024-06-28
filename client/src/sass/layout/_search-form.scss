@@ -1,0 +1,92 @@
+.search-form {
+  position: relative;
+  background-color: #f8f8f8;
+  display: block;
+  margin: 1rem auto 1.5rem;
+  padding: 2rem 6rem;
+  border-radius: 1rem;
+  width: 72rem;
+  box-shadow: 0 0.75rem 2rem rgba($color-black, 0.2);
+  z-index: 5;
+  transition: max-height 0.2s ease-out, min-height 0.2s ease-out;
+
+  &--basic {
+    min-height: 13rem;
+    max-height: 15rem;
+
+    @include respond(phone-port) {
+      min-height: 13rem;
+      max-height: 18rem;
+    }
+  }
+
+  &--advanced-entries {
+    min-height: 35rem;
+    max-height: 37rem;
+
+    @include respond(phone-port) {
+      min-height: 64rem;
+      max-height: 65rem;
+    }
+  }
+
+  &--advanced-sources {
+    min-height: 30rem;
+    max-height: 32rem;
+
+    @include respond(phone-port) {
+      min-height: 49rem;
+      max-height: 50rem;
+    }
+  }
+
+  &--advanced-collections {
+    min-height: 14rem;
+    max-height: 16rem;
+
+    @include respond(phone-port) {
+      min-height: 19rem;
+      max-height: 20rem;
+    }
+  }
+
+  @include respond(phone-land) {
+    width: 98vw;
+    padding: 1rem 3rem;
+  }
+
+  //may need to be removed
+  &__basic-search-inputs {
+    width: 64rem;
+    margin: 0 auto;
+
+    @include respond(phone-land) {
+      width: 100%;
+    }
+  }
+
+  &__keyword-container {
+    display: flex;
+  }
+
+  &__keyword-input {
+    width: 25%; //overrides default input width
+    flex: auto;
+    margin-bottom: 0;
+    vertical-align: middle;
+    margin-right: 0.5rem;
+  }
+
+  &__advanced-guide-container {
+    display: grid;
+    grid-template-columns: repeat(4, max-content);
+    justify-content: space-between;
+    width: calc(100% - 10rem);
+    margin-top: 0.3rem;
+    margin-bottom: 0.3rem;
+
+    @include respond(phone-port) {
+      grid-template-columns: repeat(2, max-content);
+    }
+  }
+}

@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+.navigation {
+  display: flex;
+  width: 100%;
+  padding: 0.5rem 5%;
+  height: 7.5rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+  background-color: #fff;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid grey;
+  z-index: 100;
+
+  @include respond(phone-port) {
+    padding: 0.5rem 10%;
+  }
+
+  &__hamburger {
+    display: none;
+    cursor: pointer;
+
+    @include respond(tab-port) {
+      display: block;
+    }
+  }
+
+  &__hamburger-bars {
+    height: 2.5rem;
+  }
+
+  &__logo {
+    cursor: pointer;
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+  }
+
+  &__donate {
+    @include respond(tab-port) {
+      display: none;
+    }
+  }
+  &__links {
+    display: flex;
+    justify-content: space-evenly;
+
+    @include respond(tab-port) {
+      display: none;
+    }
+
+    &--overlay {
+      background-color: #f8f8f8;
+      color: var(--white);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 0;
+      height: 100vh;
+      width: 100vw;
+      justify-content: space-around;
+    }
+  }
+
+  &__link {
+    transition: all 0.3s ease 0s;
+    text-decoration: none;
+    padding: 0 2rem;
+
+    @include respond(tab-port) {
+      padding: 0 1.5rem;
+    }
+    @include respond(phone-land) {
+      padding: 0 1rem;
+    }
+
+    &--overlay {
+      font-size: 2rem;
+      padding: 4rem 8rem;
+    }
+
+    &:link,
+    &:visited {
+      color: #000;
+    }
+
+    &:hover {
+      color: #0088a9;
+    }
+  }
+}
