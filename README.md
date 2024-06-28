@@ -1,3 +1,5 @@
+*This is a demo version of this application, meant to serve as a sample of my work.
+
 # Music Inventory Web
 
 A full-stack web application for searching, viewing, and editing the Sacred Music Inventory MySQL database.
@@ -109,5 +111,3 @@ The web design for this project was performed using SASS with BEM and 7-1 archit
 ## Testing
 
 A fully test-driven approach was used when putting together this application with the Jest library. Every layer of this application is tested. This includes the components, helper functions, and the Redux store (actions, reducers, sagas).
-
-![Tests](docs/tests.jpg)
