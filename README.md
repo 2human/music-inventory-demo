@@ -1,4 +1,4 @@
-*This is a demo version of this application, meant to serve as a sample of my work.
+*This is a demo version of this application, meant to act as a sample of my work.*
 
 # Music Inventory Web
 
